@@ -10,17 +10,37 @@
     <header>
         <h1>Carlos Emanuel Reyes Maldonado</h1>
         <p>HUB de Repaso e イン (Índice de Módulos)</p>
-        <span class="version-badge">Versión v0.4</span>
+        <span class="version-badge">Versión v0.5</span>
     </header>
     <main class="container">
         <section>
             <h2>Mis Módulos del Año</h2>
+            <div class="herramientas-repaso">
+                <label class="busqueda-label" for="busqueda-modulos">Buscar módulo</label>
+                <input id="busqueda-modulos" class="control-repaso" type="search" placeholder="Nombre, programa o herramienta..." autocomplete="off">
+                <label class="filtro-label" for="filtro-docente">Filtrar por docente</label>
+                <select id="filtro-docente" class="control-repaso">
+                    <option value="todos">Todos los docentes</option>
+                    <option value="javier">Javier Mineros</option>
+                    <option value="arcides">Arcides Canales</option>
+                </select>
+                <button id="cambiar-tema" class="boton-secundario" type="button" aria-pressed="false">Usar tema claro</button>
+                <div class="progreso-repaso" aria-live="polite">
+                    <div class="progreso-cabecera">
+                        <span id="resumen-progreso">0 de 8 módulos repasados</span>
+                        <span id="porcentaje-progreso">0%</span>
+                    </div>
+                    <progress id="barra-progreso" max="8" value="0" aria-label="Progreso de módulos repasados">0 de 8</progress>
+                </div>
+                <p id="estado-aplicacion" class="estado-aplicacion" role="status" aria-live="polite"></p>
+            </div>
             <div id="lista-modulos"></div>
+            <p id="sin-resultados" class="sin-resultados" hidden>No se encontraron módulos con esos filtros.</p>
         </section>
     </main>
     <footer class="site-footer">
         <span>HUB de Repaso</span>
-        <span>v0.4</span>
+        <span>v0.5</span>
     </footer>
     <script src="data/modulos.js"></script>
     <script src="js/app.js"></script>
